@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>List Copy App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .list {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+        height: 300px;
+        overflow-y: auto;
+      }
+      button {
+        display: block;
+        margin-top: 10px;
+      }
+      select {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="list" id="list1">
+        <h3>List 1</h3>
+        <input type="text" id="newItem" placeholder="Enter Item" />
+        <button id="addBtn">Add to List 1</button>
+        <select size="5" id="selectList1" multiple></select>
+      </div>
+      <div class="list" id="list2">
+        <h3>List 2</h3>
+        <button id="copyToList2">Copy to List 2</button>
+        <select size="5" id="selectList2" multiple></select>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        // Add item to List 1
+        $("#addBtn").click(function () {
+          var newItem = $("#newItem").val();
+          if (newItem !== "") {
+            $("#selectList1").append("<option>" + newItem + "</option>");
+            $("#newItem").val("");
+          }
+        });
+
+        // Copy items from List 1 to List 2
+        $("#copyToList2").click(function () {
+          var list1Options = $("#selectList1 option");
+          list1Options.clone().appendTo("#selectList2");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Search and Sort</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Search and Sort Demo</h1>
+
+      <div class="controls">
+        <!-- Input field for adding elements -->
+        <label for="addElement">Add Element: </label>
+        <input type="text" id="addElement" placeholder="Enter value" />
+        <button onclick="addElement()">Add</button>
+
+        <!-- Dropdown list for displaying array elements -->
+        <label for="arrayDropdown">Array Elements: </label>
+        <select id="arrayDropdown"></select>
+
+        <!-- Input field for searching -->
+        <label for="searchInput">Search: </label>
+        <input type="text" id="searchInput" placeholder="Enter value" />
+        <button onclick="search()">Search</button>
+
+        <!-- Button for sorting -->
+        <button onclick="sort()">Sort</button>
+      </div>
+
+      <div class="result">
+        <h2>Array Elements</h2>
+        <ul id="resultList"></ul>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
